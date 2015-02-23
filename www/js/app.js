@@ -1,12 +1,30 @@
 angular
 
 .module('starter', [
-    'ui.router'
+    'ui.router',
+    'appControllers'
 ])
 
-/*.config(['$urlRouterProvider', '$stateProvider', function ($urlRouteProvider, $stateProvider) {
+.run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state,   $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+
+}])
+
+.config(['$urlRouterProvider', '$stateProvider', function ($urlRouteProvider, $stateProvider) {
     $urlRouteProvider.otherwise('/');
-}])*/
+    
+    $stateProvider
+        .state('home', {
+            url: '/',
+            templateUrl: 'templates/header.html'
+        })
+        .state('about', {
+            url: '/about',
+            templateUrl: 'template/about.html'
+        })
+    
+}])
 
 /*.run(function () {
     if (window.cordova && window.cordova.plugins.Keyboard) {
