@@ -24,6 +24,23 @@
         <title>Hello World</title>
     </head>
     <body ng-app="starter">
-        <section ui-view></section>
+        
+        <fa-app>
+
+            <fa-header-footer-layout fa-options="{headerSize: 75, footerSize: 75}">
+
+            <!-- header -->
+            <fa-surface fa-background-color="'red'">Header</fa-surface>
+
+            <!-- content -->
+            <fa-surface fa-background-color="'blue'"><section ui-view></section></fa-surface>
+
+            <!-- footer -->
+            <fa-surface fa-background-color="'green'">Footer</fa-surface>
+
+            </fa-header-footer-layout>
+
+        </fa-app>
+        
     </body>
 </html>
